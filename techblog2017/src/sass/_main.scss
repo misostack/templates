@@ -36,3 +36,15 @@ p{
 .container{
     padding:0 15px;
 }
+
+#primary-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;    
+}
+#primary{
+    flex: 2;
+}
+#primary-sidebar{
+    flex: 1;
+}
