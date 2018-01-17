@@ -7,7 +7,45 @@
     <title>Techblog</title>
 <link href="styles.css" rel="stylesheet"></head>
 <body>
-    <h1>Techblog</h1>
-    <img src="images/850x350.png" alt="sample image">
+    <div class="container">
+        <h1>Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis eaque voluptatibus nisi saepe minus optio distinctio vel esse illum cupiditate natus reiciendis, officiis sequi, ex odit dolore corrupti ipsam.</p>
+        <h2>Heading 2</h2>
+        <blockquote>
+            Ngay xua ngay xua
+            Luc ta con tho be
+        </blockquote>
+        <h3>Heading 3</h3>
+        <p>Lorem ipsum, <strong>dolor</strong> sit amet consectetur adipisicing elit. Distinctio dolorum aliquam adipisci sequi consequuntur, et porro fugiat, delectus blanditiis placeat modi nostrum deleniti? Aliquam numquam porro nisi exercitationem qui necessitatibus?</p>
+        <h4>Heading 4</h4>
+        <img src="images/850x350.png" alt="sample image">
+        <h5>List</h5>
+        <ul>
+            <li>[x] Line 1</li>
+            <li>[x] Line 2</li>
+            <li>[x] Line 3</li>
+            <li>[x] Line 4</li>
+        </ul>
+        <h5>Code highlight</h5>
+        <pre class="code-highlight">
+            <code class="language-css">
+                @font-face {
+                    font-family: Chunkfive; src: url('Chunkfive.otf');
+                }
+
+                body, .usertext {
+                    color: #F0F0F0; background: #600;
+                    font-family: Chunkfive, sans;
+                }
+
+                @import url(print.css);
+                @media print {
+                    a[href^=http]::after {
+                    content: attr(href)
+                    }
+                }            
+            </code>
+        </pre>
+    </div>
 <script type="text/javascript" src="app.bundle.js"></script></body>
 </html>

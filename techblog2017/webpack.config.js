@@ -10,6 +10,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SRC_DIR = path.resolve(__dirname,'src');
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
+function getCSSLoader(){
+  return {
+    test: /\.css$/,
+    include: /node_modules/,
+    loader:  ['style-loader','css-loader']
+  }
+}
+
 function getSassLoader(){
   var loader = null;
   if(prod){
@@ -78,11 +86,13 @@ function getPlugins(){
       { from:SRC_DIR + '/images', to: DIST_DIR + '/images' }
     ]),     
     new webpack.HotModuleReplacementPlugin(),
-    // bootstrap,jquery
+    // bootstrap,jquery,highlightjs
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
+      // hljs: ['highlight.js/lib/index.js']
+      Prism: ['prismjs/prism.js']
     })
   ];
   if(prod){
@@ -115,7 +125,7 @@ const config = {
   devtool: getDevTool(),
   resolve: {
     modules: [SRC_DIR, "node_modules"],
-    extensions: ['.js']
+    extensions: ['.js', '.css', '.scss']
   },    
   module: {
     rules: [
@@ -126,6 +136,7 @@ const config = {
         loader: "babel-loader",
         
       },
+      getCSSLoader(),
       getSassLoader(),
       getImagesLoader()
     ]
