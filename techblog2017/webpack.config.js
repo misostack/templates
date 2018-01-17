@@ -92,7 +92,8 @@ function getPlugins(){
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       // hljs: ['highlight.js/lib/index.js']
-      Prism: ['prismjs/prism.js']
+      Prism: ['prismjs/prism.js'],
+      nv: ['nvd3/build/nv.d3.js']
     })
   ];
   if(prod){
