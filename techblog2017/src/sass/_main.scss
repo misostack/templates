@@ -8,7 +8,7 @@ body{
     font-size:1rem;    
     word-wrap:break-word;
     color:$text_color;
-    font-family: Verdana,sans-serif;    
+    font-family: Verdana,sans-serif;
 }
 
 h1{
@@ -37,14 +37,3 @@ p{
     padding:0 15px;
 }
 
-#primary-content{
-    display: flex;
-    flex-direction: column;
-    height: 100%;    
-}
-#primary{
-    flex: 2;
-}
-#primary-sidebar{
-    flex: 1;
-}
