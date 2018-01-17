@@ -2,10 +2,67 @@ const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 const prod = process.argv.indexOf('-p') !== -1;
 const ASSET_PATH = process.env.ASSET_PATH || '';
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractSASS = new ExtractTextPlugin({filename: 'styles.css'});
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var SRC_DIR = path.resolve(__dirname,'src');
-var DIST_DIR = path.resolve(__dirname, 'dist');
+const SRC_DIR = path.resolve(__dirname,'src');
+const DIST_DIR = path.resolve(__dirname, 'dist');
+
+function getSassLoader(){
+  var loader = null;
+  if(prod){
+    loader = { 
+      test: /\.scss$/,
+      use: ExtractSASS.extract({
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              plugins: function () { // post css plugins, can be exported to postcss.config.js
+                return [
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              }
+            }              
+          }, {
+            loader: "sass-loader"
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+      })
+    };
+  }else{
+    loader = {
+      test: /\.scss$/,
+      use: [{
+          loader: "style-loader"
+      }, {
+          loader: "css-loader"
+      }, {
+          loader: "sass-loader"          
+      }]
+    };
+  }
+  return loader;
+}
+
+function getImagesLoader()
+{
+  return { test: /\.(png|svg|jpe?g|gif)$/i, use: [
+    {
+      loader: 'file-loader',
+      options: {            
+        name: 'images/[name].[ext]',
+        outputPath: '',
+        useRelativePath: false            
+      }
+    }
+  ] };
+}
 
 function getPlugins(){
   var plugins = [
@@ -16,6 +73,10 @@ function getPlugins(){
     new HtmlWebpackPlugin({
       template: SRC_DIR + '/index.html'
     }),
+    ExtractSASS,
+    new CopyWebpackPlugin([
+      { from:SRC_DIR + '/images', to: DIST_DIR + '/images' }
+    ]),     
     new webpack.HotModuleReplacementPlugin(),
     // bootstrap,jquery
     new webpack.ProvidePlugin({
@@ -66,7 +127,9 @@ const config = {
         options: {
           presets: ['es2015','stage-2']
         }
-      }
+      },
+      getSassLoader(),
+      getImagesLoader()
     ]
   },
   plugins: getPlugins()
