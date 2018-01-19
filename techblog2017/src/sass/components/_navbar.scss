@@ -9,6 +9,8 @@
     }
     ul, ol{
         list-style: none;
+        margin: 0;
+        padding: 0;
     }
     .navbar-menu{
         @include flexbox();        
@@ -16,17 +18,32 @@
         // @include flex-wrap(wrap);
         @include flex-flow(row wrap);
         @include justify-content(flex-end);
+        li{
+            position: relative;
+        }
         > li {
             display:inline-block;
         }
         a{
-            padding: 3px 7px;
+            padding: 0px 7px;
             display: block;
+            line-height: 60px;
+        }
+        ul{
+            position: absolute;
+            top:100%;
+            width:240px;
+            a{
+                text-align: center;
+            }
         }
     }
 }
 .navbar-default{
     background-color:rgba(20, 20, 20, 1);
+    ul ul{
+        background-color:rgba(10, 10, 10, 1);
+    }
     *{
         color:#BFBDBD;
     }
