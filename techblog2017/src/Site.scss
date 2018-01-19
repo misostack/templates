@@ -3,17 +3,12 @@
 @import 'sass/_normalize';
 @import 'sass/_breakpoints';
 
-@import 'sass/_main';
-
+@import 'sass/_reset';
 /*extra libs*/
 @import 'css/sample.css';
 // @import '~highlight.js/styles/atom-one-dark';
 @import '~prismjs/themes/prism-coy';
-
-/*custom*/
-code{
-    display: block;
-    min-height: 19em;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
+// components
+@import 'sass/components/_navbar';
+// custom
+@import 'sass/_custom';

@@ -23,3 +23,7 @@ npm install --save-dev file-loader copy-webpack-plugin
 ```
 npm install --save-dev https://github.com/novus/nvd3.git
 ```
+
+# FlexBox
+
+(Link)[https://css-tricks.com/snippets/css/a-guide-to-flexbox/]

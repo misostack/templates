@@ -1,0 +1,39 @@
+.navbar{
+    @include flexbox();        
+    @include flex-flow(row wrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    font-size:1.2rem;
+    a{        
+        text-decoration: none;
+    }
+    ul, ol{
+        list-style: none;
+    }
+    .navbar-menu{
+        @include flexbox();        
+        // @include flex-direction(row);
+        // @include flex-wrap(wrap);
+        @include flex-flow(row wrap);
+        @include justify-content(flex-end);
+        > li {
+            display:inline-block;
+        }
+        a{
+            padding: 3px 7px;
+            display: block;
+        }
+    }
+}
+.navbar-default{
+    background-color:rgba(20, 20, 20, 1);
+    *{
+        color:#BFBDBD;
+    }
+    a{
+        @include transition(color .5s);
+    }
+    a:hover{
+        color:#FFF;
+    }
+}
