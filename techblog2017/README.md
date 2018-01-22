@@ -27,3 +27,13 @@ npm install --save-dev https://github.com/novus/nvd3.git
 # FlexBox
 
 (Link)[https://css-tricks.com/snippets/css/a-guide-to-flexbox/]
+
+# Grid
+
+(Link)[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout]
+
+# Version
+
+```
+npm info webpack-dev-server version
+```

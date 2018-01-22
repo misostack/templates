@@ -1,0 +1,22 @@
+.navbar-default{
+    background-color:rgba(20, 20, 20, 1);
+    ul ul{
+        background-color:rgba(10, 10, 10, 1);
+    }
+    *,a:visited,a:active{
+        color:#BFBDBD;
+    }
+    a{
+        @include transition(color .5s);
+    }
+    a:hover{
+        color:#FFF;
+    }
+    li:hover > ul {
+        display: block;
+    }
+}
+.footer-default{
+    background-color:rgba(20, 20, 20, 1);
+    color:#FFF;
+}

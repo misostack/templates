@@ -225,3 +225,8 @@
     -webkit-transition-delay: $delay;
     transition-delay:         $delay;
 }
+
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}

@@ -7,18 +7,11 @@
     <title>Techblog</title>
 <link href="styles.css" rel="stylesheet"></head>
 <body>    
-    <!-- <div id="aside-nav">
-        <h1>Mobile Sidebar</h1>
-        <ul>
-            <li class="item"><a href="#">Link 1</a></li>
-            <li class="item"><a href="#">Link 2</a></li>
-            <li class="item"><a href="#">Link 3</a></li>
-            <li class="item"><a href="#">Link 4</a></li>
-            <li class="item"><a href="#">Link 5</a></li>
-        </ul>
-    </div> -->
-    <div id="main">
-        <header>
+    <div class="wrapper">
+        <header class="header">
+            <h1>The header</h1>
+        </header>
+        <div class="mainnav">
             <nav id="navBar" class="navbar navbar-default clearfix">
                 <a href="/" class="navbar-branch">
                     BRAND
@@ -26,20 +19,96 @@
                 <div class="navbar-menu-wrap">
                     <ul class="navbar-menu">
                         <li><a href="#">Algorithm</a></li>
-                        <li><a href="#">Database</a></li>
+                        <li>
+                            <a href="#">DataStorage</a>
+                            <ul class="navbar-sub-menu">
+                                <li><a href="#">Files</a></li>
+                                <li><a href="#">Redis</a></li>
+                                <li><a href="#">MySQL</a></li>
+                                <li><a href="#">PostgreSQL</a></li>
+                                <li><a href="#">MSSQL</a></li>
+                                <li><a href="#">MongoDB</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Design Pattern</a></li>
                         <li><a href="#">Ebooks</a></li>
                         <li><a href="#">Language</a></li>
                         <li><a href="#">OpenSource</a></li>
-                        <li><a href="#">System</a></li>
+                        <li>
+                            <a href="#">Tech blogs</a>
+                            <ul class="navbar-sub-menu">
+                                <li><a href="https://www.infoq.com/presentations/go-programming-language#">InfoQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Tools</a>
+                            <ul class="navbar-sub-menu">
+                                <li><a href="https://regex101.com/">Online Regex</a></li>
+                                <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">System</a>
+                            <ul class="navbar-sub-menu">
+                                <li><a href="#">Ubuntu</a></li>
+                                <li><a href="#">Centos</a></li>
+                                <li><a href="#">AWS Service</a></li>
+                                <li><a href="#">Heroku</a></li>
+                                <li><a href="#">Vultr</a></li>
+                                <li><a href="#">Digital Ocean</a></li>
+                            </ul>                            
+                        </li>
                     </ul>
                 </div>
             </nav>
-
-        </header>
-        <nav id="topnav"><a target="_blank" href="https://tutorialzine.com/2016/04/5-flexbox-techniques-you-need-to-know-about">Tutorial Flex</a></nav>
-        <main id="primary-content">
-            <aside id="primary-sidebar">
+        </div>
+        <article class="content">
+            <div class="container">
+                <h1>Heading 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis eaque voluptatibus nisi saepe minus optio distinctio vel esse illum cupiditate natus reiciendis, officiis sequi, ex odit dolore corrupti ipsam.</p>
+                <!-- <h2>Heading 2</h2>
+                <blockquote>
+                    Ngay xua ngay xua
+                    Luc ta con tho be
+                </blockquote>
+                <h3>Heading 3</h3>
+                <p>Lorem ipsum, <strong>dolor</strong> sit amet consectetur adipisicing elit. Distinctio dolorum aliquam adipisci sequi consequuntur, et porro fugiat, delectus blanditiis placeat modi nostrum deleniti? Aliquam numquam porro nisi exercitationem qui necessitatibus?</p>
+                <h4>Heading 4</h4>
+                <img src="images/850x350.png" alt="sample image">
+                <h5>List</h5>
+                <ul>
+                    <li>[x] Line 1</li>
+                    <li>[x] Line 2</li>
+                    <li>[x] Line 3</li>
+                    <li>[x] Line 4</li>
+                </ul>
+                <h5>Code highlight</h5>
+                <pre class="code-highlight">
+                    <code class="language-css">
+                        @font-face {
+                            font-family: Chunkfive; src: url('Chunkfive.otf');
+                        }
+        
+                        body, .usertext {
+                            color: #F0F0F0; background: #600;
+                            font-family: Chunkfive, sans;
+                        }
+        
+                        @import url(print.css);
+                        @media print {
+                            a[href^=http]::after {
+                            content: attr(href)
+                            }
+                        }            
+                    </code>
+                </pre> -->
+            </div>                
+        </article>
+        <aside id="primary-sidebar" class="sidebar">
+            <div class="container">
                 <div class="widget">
                     <h3>Widget title</h3>
                     <ul>
@@ -50,52 +119,13 @@
                         <li class="item"><a href="#">Link 5</a></li>                        
                     </ul>
                 </div>
-            </aside>
-            <section id="primary">
-                <div class="container">
-                        <h1>Heading 1</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis eaque voluptatibus nisi saepe minus optio distinctio vel esse illum cupiditate natus reiciendis, officiis sequi, ex odit dolore corrupti ipsam.</p>
-                        <h2>Heading 2</h2>
-                        <blockquote>
-                            Ngay xua ngay xua
-                            Luc ta con tho be
-                        </blockquote>
-                        <h3>Heading 3</h3>
-                        <p>Lorem ipsum, <strong>dolor</strong> sit amet consectetur adipisicing elit. Distinctio dolorum aliquam adipisci sequi consequuntur, et porro fugiat, delectus blanditiis placeat modi nostrum deleniti? Aliquam numquam porro nisi exercitationem qui necessitatibus?</p>
-                        <h4>Heading 4</h4>
-                        <img src="images/850x350.png" alt="sample image">
-                        <h5>List</h5>
-                        <ul>
-                            <li>[x] Line 1</li>
-                            <li>[x] Line 2</li>
-                            <li>[x] Line 3</li>
-                            <li>[x] Line 4</li>
-                        </ul>
-                        <h5>Code highlight</h5>
-                        <pre class="code-highlight">
-                            <code class="language-css">
-                                @font-face {
-                                    font-family: Chunkfive; src: url('Chunkfive.otf');
-                                }
-                
-                                body, .usertext {
-                                    color: #F0F0F0; background: #600;
-                                    font-family: Chunkfive, sans;
-                                }
-                
-                                @import url(print.css);
-                                @media print {
-                                    a[href^=http]::after {
-                                    content: attr(href)
-                                    }
-                                }            
-                            </code>
-                        </pre>
-                    </div>                
-            </section>
-        </main>
+            </div>
+        </aside>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <p>Footer</p>
+            </div>
+        </footer>        
     </div>
-    <footer id="footer">            
-    </footer>
 <script type="text/javascript" src="app.bundle.js"></script></body>
 </html>

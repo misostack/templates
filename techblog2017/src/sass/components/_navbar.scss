@@ -25,7 +25,7 @@
             display:inline-block;
         }
         a{
-            padding: 0px 7px;
+            padding: 0px 15px;
             display: block;
             line-height: 60px;
         }
@@ -35,22 +35,9 @@
             width:240px;
             a{
                 text-align: center;
+                line-height: 40px;
             }
+            display: none;
         }
-    }
-}
-.navbar-default{
-    background-color:rgba(20, 20, 20, 1);
-    ul ul{
-        background-color:rgba(10, 10, 10, 1);
-    }
-    *{
-        color:#BFBDBD;
-    }
-    a{
-        @include transition(color .5s);
-    }
-    a:hover{
-        color:#FFF;
     }
 }

@@ -135,7 +135,9 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         include: SRC_DIR,
         loader: "babel-loader",
-        
+        options: {
+          presets: ['env']
+        }
       },
       getCSSLoader(),
       getSassLoader(),

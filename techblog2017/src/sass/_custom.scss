@@ -1,0 +1,42 @@
+html { height: 100%; }
+body {
+    min-height:100%; 
+    position:relative; 
+    padding-bottom:[footer-height] 
+}
+.footer { 
+    position: absolute; 
+    left: 0 ; right: 0; bottom: 0; 
+    height:[footer-height];
+}
+.wrapper{
+    @include display-grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 0px;    
+    > * {
+        grid-column: col-start / span 12;
+    }
+    @include for-size(desktop-view) {
+        .header{
+            grid-column: col-start / span 12;
+            grid-row: 1;
+        }
+        .mainnav{
+            grid-column: col-start / span 12;
+            grid-row: 2;       
+        }
+        .content{
+            grid-column: col-start 4 / span 8;
+            grid-row: 3 / 4;
+        }
+        .sidebar{
+            grid-column: col-start / span 3;
+            grid-row: 3;
+        }
+        .footer{
+            grid-column: col-start / span 12;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+    }
+}
