@@ -1,4 +1,10 @@
-$primary_color:#fb292d;
-$secondary_color:#222222;
+$primary_bg: #ffffff;
+$primary_color: #222222;
 $text_color:#212121;
-$main_bg_color:#FFF;
+$main_bg_color: #f5f5f5;
+
+$sidebar_bg: $primary_color;
+$sidebar_color: $primary_bg;
+$link_color: $text_color;
+$navbar_bg:$primary_bg;
+$navbar_color:$primary_color;

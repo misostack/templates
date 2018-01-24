@@ -1,18 +1,1 @@
-@import 'sass/_vars';
-@import 'sass/_mixins';
-@import 'sass/_normalize';
-@import 'sass/_breakpoints';
-
-@import 'sass/_reset';
-/*extra libs*/
-@import 'css/sample.css';
-// @import '~highlight.js/styles/atom-one-dark';
-@import '~prismjs/themes/prism-coy';
-// grids
-@import 'sass/_grid';
-// components
-@import 'sass/components/_navbar';
-// default
-@import 'sass/_default';
-// custom
-@import 'sass/_custom';
+@import 'sass/_bootstrap';

@@ -1,0 +1,16 @@
+.sidebar{
+    &-widget{
+        .widget-header{
+            span, a {
+                font-size:1.2rem;
+                background-color: $sidebar_bg;
+                text-decoration: none;
+                line-height: 2rem;
+                display: inline-block;
+                padding: 7px 12px 4px 12px;
+                color: $sidebar_color;
+            }
+            border-bottom: 1px solid $sidebar_bg;
+        }
+    }
+}
