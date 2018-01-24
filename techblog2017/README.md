@@ -37,3 +37,7 @@ npm install --save-dev https://github.com/novus/nvd3.git
 ```
 npm info webpack-dev-server version
 ```
+
+# Lazy load
+
+http://jquery.eisbehr.de/lazy/

@@ -7,6 +7,7 @@ var Site = Site || {};
       this.highlightcode();
       this.navBarEvent();
       this.scrollEvent();
+      this.lazyLoading();
     },
     // highlight code
     highlightcode: function(){
@@ -24,9 +25,7 @@ var Site = Site || {};
     lazyLoading: function(){
       $('.lazy').Lazy({
         // your configuration goes here
-        scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        visibleOnly: true,
+        placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
         }
