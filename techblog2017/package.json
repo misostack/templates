@@ -24,6 +24,7 @@
     "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.2.1",
+    "jquery-lazy": "^1.7.7",
     "node-sass": "^4.7.2",
     "nvd3": "git+https://github.com/novus/nvd3.git",
     "postcss-loader": "^2.0.10",
