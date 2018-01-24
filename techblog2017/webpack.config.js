@@ -1,4 +1,5 @@
 const webpack = require('webpack'); //to access built-in plugins
+const merge = require("webpack-merge");
 const path = require('path');
 const prod = process.argv.indexOf('-p') !== -1;
 const ASSET_PATH = process.env.ASSET_PATH || '';
@@ -9,6 +10,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const SRC_DIR = path.resolve(__dirname,'src');
 const DIST_DIR = path.resolve(__dirname, 'dist');
+const parts = require("./webpack.parts");
 
 function getCSSLoader(){
   return {
@@ -108,7 +110,7 @@ function getDevTool(){
   return prod ? 'none' : 'inline-source-map';
 }
 
-const config = {
+const commonConfig = {
   entry: {
     app: SRC_DIR + '/index.js'
   },
@@ -141,10 +143,29 @@ const config = {
       },
       getCSSLoader(),
       getSassLoader(),
-      getImagesLoader()
+      // getImagesLoader()
     ]
   },
   plugins: getPlugins()
 };
 
-module.exports = config;
+const productionConfig = merge([
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: "[name].[ext]",
+    },
+  }),
+]);
+
+const developmentConfig = merge([
+  parts.loadImages(),
+]);
+
+module.exports = env => {
+  if (env === "production") {
+    return merge(commonConfig, productionConfig);
+  }
+
+  return merge(commonConfig, developmentConfig);
+};
