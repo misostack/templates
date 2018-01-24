@@ -5,6 +5,7 @@ var Site = Site || {};
     bootstrap : function(){   
       console.log('init site bootstrap');
       this.highlightcode();
+      this.navbarmenu();
     },
     // highlight code
     highlightcode: function(){
@@ -17,7 +18,17 @@ var Site = Site || {};
       // console.log(hljs.listLanguages());
       // hljs.configure({useBR: true});
       Prism.highlightAll();
-      
+    },
+    // navbar-menu
+    navbarmenu: function(){
+      $('.navbar-menu li').hover(function(){
+        // hover in
+        var offset = $(this).offset();
+        $(this).addClass('hover');
+      },function(){
+        // hover out
+        $(this).removeClass('hover');
+      });
     }
   };
 })(jQuery);
