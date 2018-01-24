@@ -1,5 +1,7 @@
 .navbar-default{
-    background-color:$secondary_color;
+    background-color: transparentize($secondary_color, .0);
+    @include transition-property(transform);
+    @include transition-duration(3s);    
     ul ul{
         background-color:$secondary_color;
     }
@@ -7,7 +9,7 @@
         color:#FFF;
     }
     a{
-        @include transition(background-color .8s);
+        // @include transition(background-color .8s);
     }
     a:hover{
         background-color: #FFF;
@@ -15,6 +17,14 @@
     }
     li.hover > ul {
         display: block;
+    }
+    &.navbar-fixed.navbar-fixed-active{        
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index: 10001;        
+        background-color: transparentize($secondary_color, .2);
     }
 }
 .body-default{

@@ -5,7 +5,8 @@ var Site = Site || {};
     bootstrap : function(){   
       console.log('init site bootstrap');
       this.highlightcode();
-      this.navbarmenu();
+      this.navBarEvent();
+      this.scrollEvent();
     },
     // highlight code
     highlightcode: function(){
@@ -19,8 +20,28 @@ var Site = Site || {};
       // hljs.configure({useBR: true});
       Prism.highlightAll();
     },
+    // scroll event
+    scrollEvent: function(){
+      this.dynamicPosition();
+      $(window).scroll(function () {
+        Site.dynamicPosition();
+      })      
+    },
+    // dynamicPosition
+    dynamicPosition: function(){
+      var scrolltop = $(window).scrollTop();  
+      var $navbar = $('.navbar-fixed');
+      var navbar_scroll = scrolltop - $('.header').outerHeight();
+      navbar_scroll = Math.max(0,navbar_scroll);
+      if ( parseInt(navbar_scroll) > 0 ) {
+        $navbar.addClass('navbar-fixed-active');
+      }else{        
+        $navbar.removeClass('navbar-fixed-active');
+      }
+    },
     // navbar-menu
-    navbarmenu: function(){
+    navBarEvent: function(){
+      
       $('.navbar-menu li').hover(function(){
         // hover in
         var offset = $(this).offset();
