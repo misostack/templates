@@ -1,23 +1,28 @@
+// @include transition(background-color .8s);
 .navbar-default{
     background-color: transparentize($secondary_color, .0);
     @include transition-property(transform);
-    @include transition-duration(3s);    
-    ul ul{
-        background-color:$secondary_color;
-    }
+    @include transition-duration(3s);
     *,a:visited,a:active{
         color:#FFF;
     }
-    a{
-        // @include transition(background-color .8s);
-    }
-    a:hover{
+    .navbar-menu ul{
         background-color: #FFF;
-        color:#222;
+        @include box-shadow(3px, 3px, 3px, $secondary_color);
+        *,a:visited,a:active{
+            color: $text_color;
+        }
     }
-    li.hover > ul {
-        display: block;
+    .navbar-menu > li.hover{
+        a{ background: #FFF; color: #222; }
+        ul {
+            display: block;
+            li.hover a{
+                background: transparentize($secondary_color, .9);                
+            }
+        }
     }
+
     &.navbar-fixed.navbar-fixed-active{        
         position: fixed;
         top:0;
