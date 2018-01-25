@@ -41,3 +41,7 @@ npm info webpack-dev-server version
 # Lazy load
 
 http://jquery.eisbehr.de/lazy/
+
+# Palettes
+
+https://www.materialpalette.com/teal/teal
