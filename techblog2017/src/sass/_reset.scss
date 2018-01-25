@@ -7,14 +7,14 @@ html{
 body{
     font-size:1rem;    
     word-wrap:break-word;
-    color:$text_color;
     font-family: Verdana,sans-serif;
 }
 
 * {box-sizing: border-box;}
-h1,h2,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,a{
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 h1{
     font-size:2rem;    
@@ -38,9 +38,18 @@ p{
     line-height: 1.4rem;
 }
 
-.container{
+.container,.container-fluid{
     padding:0 20px;    
 }
+.container{
+    max-width: 1170px;
+    margin:0px auto;
+}
+.container-fluid{
+    max-width: 100%;
+    margin:0px auto;
+}
+
 
 .clearfix{
     @extend %clearfix;
@@ -55,6 +64,5 @@ p{
 }
 
 a,a:hover,a:active,a:visited{
-    color: $link_color;
     text-decoration: none;    
 }

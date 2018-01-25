@@ -233,6 +233,6 @@
 
 // box-shadow
 
-@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $primary-text-color) {
     box-shadow: $x-axis $y-axis $blur $color;
 }
