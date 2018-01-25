@@ -28,7 +28,7 @@ var Site = Site || {};
         var $article_scrollby = $('.article-scrollby');
         var article_tiles = $article_scrollby.find(':header');
         var $article_scrollby_sidebar = $($article_scrollby.attr('data-target'));
-        var pos_buffer = $('.navbar-fixed').outerHeight();
+        var pos_buffer = $('.navbar-fixed').outerHeight(true) + parseInt($('.main-content').css('padding-top'));
         if( $article_scrollby_sidebar.length > 0 ){
           var $article_scrollpy_links = $article_scrollby_sidebar.find('.article-scrollpy-links');
           article_tiles.each(function(index, ele){
@@ -37,8 +37,7 @@ var Site = Site || {};
           });
           // add click event
           $article_scrollpy_links.on('click','.article-titles-link', function(){
-            
-            Site.smoothScrollToElement( $(this).attr('data-href'), pos_buffer * -1);
+            Site.smoothScrollToElement( $(this).attr('data-href'), -1 * pos_buffer);
           });          
         }
       }
@@ -49,7 +48,7 @@ var Site = Site || {};
         // your configuration goes here
         placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
         onError: function(element) {
-            console.log('error loading ' + element.data('src'));
+          // console.log('error loading ' + element.data('src'));
         }
       });
     },
@@ -64,12 +63,17 @@ var Site = Site || {};
     dynamicPosition: function(){
       var scrolltop = $(window).scrollTop();  
       var $navbar = $('.navbar-fixed');
+      var $sidebar_fixed = $('.sidebar-fixed');
       var navbar_scroll = scrolltop - $('.header').outerHeight();
+      var sidebar_scroll = scrolltop;
       navbar_scroll = Math.max(0,navbar_scroll);
+
       if ( parseInt(navbar_scroll) > 0 ) {
         $navbar.addClass('navbar-fixed-active');
-      }else{        
+        $('body').addClass('active-scroll');
+      }else{    
         $navbar.removeClass('navbar-fixed-active');
+        $('body').removeClass('active-scroll');
       }
     },
     // navbar-menu
@@ -87,7 +91,7 @@ var Site = Site || {};
     // smoothScrollTo
     smoothScrollTo: function ( pos, callback) {
       $('html, body')
-      .animate({ scrollTop: pos }, 1000)
+      .animate({ scrollTop: pos }, 500)
       .promise()
       .then(function(){
           // callback code here

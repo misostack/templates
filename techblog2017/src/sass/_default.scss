@@ -32,6 +32,7 @@ a:hover{
         color: $navbar_color;
     }
     .navbar-menu ul{
+        z-index: 10100;
         background-color: $navbar_color;
         @include box-shadow(0px, 1px, 1px, $navbar_bg);
         *,a:visited,a:active{
@@ -53,7 +54,7 @@ a:hover{
         top:0;
         left:0;
         right:0;
-        z-index: 10001;        
+        z-index: 10100;
         background-color: transparentize($navbar_bg, .2);
     }
 }
@@ -65,8 +66,8 @@ a:hover{
     background-color:$navbar_bg;
     color: $navbar_color;
 }
-.mainnav{
-    margin-bottom: 20px;
+.main-content{
+    padding-top: 20px;
 }
 .sidebar{
     @include for-size(desktop-view){
@@ -109,13 +110,5 @@ a:hover{
     }
     hr{
         color: $divider-color;
-    }
-}
-
-#article-scrollpy{
-    *.fixed-position{
-        background: #FFF;
-        position: fixed;
-        z-index: 10002;        
     }
 }

@@ -1,3 +1,6 @@
+body.active-scroll{
+    margin-top:60px;
+}
 .navbar{
     @include flexbox();        
     @include flex-flow(row wrap);

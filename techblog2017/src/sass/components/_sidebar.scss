@@ -1,4 +1,10 @@
 .sidebar{
+    position: relative;
+    &-fixed{
+        background:#FFF;
+        top:0;
+        bottom:auto;
+    }
     &-widget{
         .widget-header{
             margin: 0 0 15px 0;
