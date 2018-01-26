@@ -74,6 +74,10 @@ function getImagesLoader()
   ] };
 }
 
+function getFontLoader(){
+  return { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] };
+}
+
 function getPlugins(){
   var plugins = [
     new webpack.LoaderOptionsPlugin({
@@ -143,6 +147,7 @@ const commonConfig = {
       },
       getCSSLoader(),
       getSassLoader(),
+      getFontLoader(),
       // getImagesLoader()
     ]
   },

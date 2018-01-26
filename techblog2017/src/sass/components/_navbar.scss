@@ -26,6 +26,12 @@ body.active-scroll{
         }
         > li {
             display:inline-block;
+            &.has-children > a:after{
+                padding: 0 0.8rem;
+                content: "\F078";
+                @extend .fa;
+                font-size:0.8rem;
+            }
         }
         a{
             padding: 0px 15px;

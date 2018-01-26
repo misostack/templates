@@ -78,7 +78,8 @@ var Site = Site || {};
     },
     // navbar-menu
     navBarEvent: function(){
-      
+      // navbar ui
+      $('.navbar-menu li').has('ul').addClass('has-children');
       $('.navbar-menu li').hover(function(){
         // hover in
         var offset = $(this).offset();
